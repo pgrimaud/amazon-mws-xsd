@@ -1,0 +1,646 @@
+<?xml version="1.0"?>
+<!-- Revision="$Revision: #1 $" -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<!--
+    $Date: 2011/04/06 $
+
+    AMAZON.COM CONFIDENTIAL.  This document and the information contained in it are
+    confidential and proprietary information of Amazon.com and may not be reproduced, 
+    distributed or used, in whole or in part, for any purpose other than as necessary 
+    to list products for sale on the www.amazon.com web site pursuant to an agreement 
+    with Amazon.com. 
+    -->
+	<xsd:include schemaLocation="amzn-base.xsd"/>
+	<xsd:element name="LargeAppliances">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="ProductType">
+					<xsd:complexType>
+						<xsd:choice>
+							<xsd:element ref="AirConditioner"/>
+							<xsd:element ref="ApplianceAccessory"/>
+							<xsd:element ref="CookingOven"/>
+							<xsd:element ref="Cooktop"/>
+							<xsd:element ref="Dishwasher"/>
+							<xsd:element ref="LaundryAppliance"/>
+							<xsd:element ref="MicrowaveOven"/>
+							<xsd:element ref="Range"/>
+							<xsd:element ref="RefrigerationAppliance"/>
+							<xsd:element ref="TrashCompactor"/>
+							<xsd:element ref="VentHood"/>
+						</xsd:choice>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element ref="Battery" minOccurs="0"/>
+				<xsd:element name="BatteryAverageLifeStandby" type="PositiveDimension" minOccurs="0"/>
+				<xsd:element name="BatteryLife" type="BatteryLifeDimension" minOccurs="0"/>
+				<xsd:element name="Capacity" type="VolumeDimension" minOccurs="0"/>
+				<xsd:element name="ColorMap" minOccurs="0"/>
+				<xsd:element ref="ColorSpecification" minOccurs="0"/>
+				<xsd:element name="CountryOfOrigin" type="CountryOfOriginType" minOccurs="0"/>
+				<xsd:element name="Diameter" type="LengthDimension" minOccurs="0"/>
+				<xsd:element name="DisplayVolume" type="VolumeDimension" minOccurs="0"/>
+				<xsd:element name="Efficiency" type="PositiveDimension" minOccurs="0"/>
+				<xsd:element name="EuEnergyLabelEfficiencyClass" type="EffeciencyClassTypeValues"
+					minOccurs="0"/>
+				<xsd:element name="EnergyConsumption" type="EnergyConsumptionDimension"
+					minOccurs="0"/>
+				<xsd:element name="FilterPoreSize" type="FilterPoreSizeDimension" minOccurs="0"/>
+				<xsd:element name="FormFactor" type="String" minOccurs="0"/>
+				<xsd:element name="FrontStyle" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="IncludedComponents" type="String" minOccurs="0" maxOccurs="4"/>
+				<xsd:element name="InnerMaterialType" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="InstallationType" type="String" minOccurs="0"/>
+				<xsd:element name="IsWhiteGloveRequired" type="xsd:boolean" minOccurs="0"/>
+				<xsd:element name="ItemThickness" type="LengthDimension" minOccurs="0"/>
+				<xsd:element name="LithiumBatteryEnergyContent" type="PositiveInteger" minOccurs="0"/>
+				<xsd:element name="LithiumBatteryPackaging" minOccurs="0">
+					<xsd:simpleType>
+						<xsd:restriction base="String">
+							<xsd:enumeration value="batteries_contained_in_equipment"/>
+							<xsd:enumeration value="batteries_only"/>
+							<xsd:enumeration value="batteries_packed_with_equipment"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+				<xsd:element name="LithiumBatteryVoltage" type="PositiveInteger" minOccurs="0"/>
+				<xsd:element name="LithiumBatteryWeight" type="PositiveInteger" minOccurs="0"/>
+				<xsd:element name="MaterialType" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="MfgWarrantyDescriptionLabor" type="SuperLongStringNotNull"
+					minOccurs="0"/>
+				<xsd:element name="MfgWarrantyDescriptionParts" type="SuperLongStringNotNull"
+					minOccurs="0"/>
+				<xsd:element name="MfrPartNumber" type="FortyStringNotNull" minOccurs="0"/>
+				<xsd:element name="ModelNumber" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="NoiseLevel" type="NoiseLevelDimension" minOccurs="0"/>
+				<xsd:element name="NumberOfLithiumIonCells" type="PositiveInteger" minOccurs="0"/>
+				<xsd:element name="NumberOfLithiumMetalCells" type="PositiveInteger" minOccurs="0"/>
+				<xsd:element name="VariationData" minOccurs="0">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="Parentage">
+								<xsd:simpleType>
+									<xsd:restriction base="String">
+										<xsd:enumeration value="parent"/>
+										<xsd:enumeration value="child"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+							<xsd:element name="VariationTheme" minOccurs="0">
+								<xsd:simpleType>
+									<xsd:restriction base="String">
+										<xsd:enumeration value="Color"/>
+										<xsd:enumeration value="Size"/>
+										<xsd:enumeration value="SizeColor"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="ProductGrade" type="String" minOccurs="0"/>
+				<xsd:element name="SellerWarrantyDescription" type="SuperLongString" minOccurs="0"/>
+				<xsd:element name="SidePanelColor" type="String" minOccurs="0"/>
+				<xsd:element name="Size" type="String" minOccurs="0"/>
+				<xsd:element name="SizeMap" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="SpecialFeatures" type="String" minOccurs="0" maxOccurs="4"/>
+				<xsd:element name="SpecificationsMet" type="String" minOccurs="0"/>
+				<xsd:element name="TemperatureRating" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="Voltage" type="VoltageDecimalDimension" minOccurs="0"/>
+				<xsd:element name="Warnings" type="LongStringNotNull" minOccurs="0"/>
+				<xsd:element name="Warranty" type="SuperLongString" minOccurs="0"/>
+				<xsd:element name="Wattage" type="WattageDimension" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<!--
+    ###############################################################
+    # AIR_CONDITIONER Classification Data
+    ###############################################################
+    -->
+	<xsd:element name="AirConditioner">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="AirConditionCoverageCooling" type="String" minOccurs="0"/>
+				<xsd:element name="AirConditionCoverageHeating" type="String" minOccurs="0"/>
+				<xsd:element name="ConnectorType" type="String" minOccurs="0" maxOccurs="2"/>
+				<xsd:element name="ControlsType" type="String" minOccurs="0"/>
+				<xsd:element name="CoolingVents" type="xsd:integer" minOccurs="0"/>
+				<xsd:element name="DryerPowerSource" type="String" minOccurs="0"/>
+				<xsd:element name="EnergyConsumptionEfficiencyRateAPF" type="String" minOccurs="0"/>
+				<xsd:element name="HoodDescription" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="IceCapacity" type="IceCapacityDimension" minOccurs="0"/>
+				<xsd:element name="ItemDimensionsIndoor" type="String" minOccurs="0"/>
+				<xsd:element name="ItemDimensionsOutdoor" type="String" minOccurs="0"/>
+				<xsd:element name="IsPortable" type="xsd:boolean" minOccurs="0"/>
+				<xsd:element name="LightingMethod" type="String" minOccurs="0"/>
+				<xsd:element name="MaximumPipeDifferenceInHeight" type="LengthDimension"
+					minOccurs="0"/>
+				<xsd:element name="OperatingNoiseIndoorEquipment" type="NoiseLevelDimension"
+					minOccurs="0"/>
+				<xsd:element name="OperatingNoiseOutdoorEquipment" type="NoiseLevelDimension"
+					minOccurs="0"/>
+				<xsd:element name="PipeDiameter" type="LengthDimension" minOccurs="0"/>
+				<xsd:element name="PipeLength" type="LengthDimension" minOccurs="0"/>
+				<xsd:element name="PowerConsumptionWattageCooling" type="EnergyConsumptionDimension"
+					minOccurs="0"/>
+				<xsd:element name="PowerConsumptionWattageHeating" type="EnergyConsumptionDimension"
+					minOccurs="0"/>
+				<xsd:element name="PowerPlugCapacity" type="PowerPlugCapacityDimension"
+					minOccurs="0"/>
+				<xsd:element name="RatedCoolingCapacity" type="EnergyConsumptionDimension"
+					minOccurs="0"/>
+				<xsd:element name="RatedHeatingCapacity" type="EnergyConsumptionDimension"
+					minOccurs="0"/>
+				<xsd:element name="RecommendedProductUses" type="String" minOccurs="0"/>
+				<xsd:element name="ShelfType" type="String" minOccurs="0"/>
+				<xsd:element name="TrayType" type="String" minOccurs="0"/>
+				<xsd:element name="VoltageType" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="WasherArms" type="xsd:integer" minOccurs="0"/>
+				<xsd:element name="WeightIndoorEquipment" type="WeightDimension" minOccurs="0"/>
+				<xsd:element name="WeightOutdoorEquipment" type="WeightDimension" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<!--
+    ###############################################################
+    # APPLIANCE_ACCESSORY Classification Data
+    ###############################################################
+    -->
+	<xsd:element name="ApplianceAccessory">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="ConnectorType" type="String" minOccurs="0" maxOccurs="2"/>
+				<xsd:element name="ControlsType" type="String" minOccurs="0"/>
+				<xsd:element name="CoolingVents" type="xsd:integer" minOccurs="0"/>
+				<xsd:element name="DryerPowerSource" type="String" minOccurs="0"/>
+				<xsd:element name="IceCapacity" type="IceCapacityDimension" minOccurs="0"/>
+				<xsd:element name="IsPortable" type="xsd:boolean" minOccurs="0"/>
+				<xsd:element name="LightingMethod" type="String" minOccurs="0"/>
+				<xsd:element name="RecommendedProductUses" type="String" minOccurs="0"/>
+				<xsd:element name="ShelfType" type="String" minOccurs="0"/>
+				<xsd:element name="TrayType" type="String" minOccurs="0"/>
+				<xsd:element name="WasherArms" type="xsd:integer" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<!--
+    ###############################################################
+    # COOKING_OVEN Classification Data
+    ###############################################################
+    -->
+	<xsd:element name="CookingOven">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="BurnerType" type="String" minOccurs="0"/>
+				<xsd:element name="ChamberVolume" type="WaterConsumptionDimension" minOccurs="0"/>
+				<xsd:element name="ControlsType" type="String" minOccurs="0"/>
+				<xsd:element name="CooktopMaterialType" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="DrawerType" type="String" minOccurs="0" maxOccurs="4"/>
+				<xsd:element name="EnergyConsumptionConvection" type="EnergyConsumptionDimension"
+					minOccurs="0"/>
+				<xsd:element name="EnergyConsumptionStandard" type="EnergyConsumptionDimension"
+					minOccurs="0"/>
+				<xsd:element name="FuelType" type="String" minOccurs="0"/>
+				<xsd:element name="HeatingElements" type="xsd:integer" minOccurs="0"/>
+				<xsd:element name="HeatingMode" type="String" minOccurs="0"/>
+				<xsd:element name="HoodDescription" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="LightingMethod" type="String" minOccurs="0"/>
+				<xsd:element name="MaxEnergyOutput" type="MaxEnergyOutputDimension" minOccurs="0"/>
+				<xsd:element name="RecommendedProductUses" type="String" minOccurs="0"/>
+				<xsd:element name="Racks" type="xsd:integer" minOccurs="0"/>
+				<xsd:element name="ShelfType" type="String" minOccurs="0"/>
+				<xsd:element name="TopStyle" type="String" minOccurs="0"/>
+				<xsd:element name="TrayType" type="String" minOccurs="0"/>
+				<xsd:element name="VolumeCapacityName" type="StringNotNull" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<!--
+    ###############################################################
+    # COOKTOP Classification Data
+    ###############################################################
+    -->
+	<xsd:element name="Cooktop">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="AirflowDisplacement" type="AirflowDisplacementDimension"
+					minOccurs="0"/>
+				<xsd:element name="BurnerType" type="String" minOccurs="0"/>
+				<xsd:element name="ChamberVolume" type="WaterConsumptionDimension" minOccurs="0"/>
+				<xsd:element name="ControlsType" type="String" minOccurs="0"/>
+				<xsd:element name="CooktopMaterialType" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="DrawerType" type="String" minOccurs="0" maxOccurs="4"/>
+				<xsd:element name="DryerPowerSource" type="String" minOccurs="0"/>
+				<xsd:element name="EnergyConsumptionConvection" type="EnergyConsumptionDimension"
+					minOccurs="0"/>
+				<xsd:element name="EnergyConsumptionStandard" type="EnergyConsumptionDimension"
+					minOccurs="0"/>
+				<xsd:element name="FuelType" type="String" minOccurs="0"/>
+				<xsd:element name="HeatingElements" type="xsd:integer" minOccurs="0"/>
+				<xsd:element name="HoodDescription" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="LightingMethod" type="String" minOccurs="0"/>
+				<xsd:element name="MaxEnergyOutput" type="MaxEnergyOutputDimension" minOccurs="0"/>
+				<xsd:element name="RecommendedProductUses" type="String" minOccurs="0"/>
+				<xsd:element name="ShelfType" type="String" minOccurs="0"/>
+				<xsd:element name="TopStyle" type="String" minOccurs="0"/>
+				<xsd:element name="TrayType" type="String" minOccurs="0"/>
+				<xsd:element name="VolumeCapacityName" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="WasherArms" type="xsd:integer" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<!--
+    ###############################################################
+    # DISHWASHER Classification Data
+    ###############################################################
+    -->
+	<xsd:element name="Dishwasher">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="AnnualEnergyConsumption" type="EnergyConsumptionDimension"
+					minOccurs="0"/>
+				<xsd:element name="AnnualWaterConsumption" type="WaterConsumptionDimension"
+					minOccurs="0"/>
+				<xsd:element name="CompatibleDevice" type="String" minOccurs="0"/>
+				<xsd:element name="ControlsType" type="String" minOccurs="0"/>
+				<xsd:element name="CoolingVents" type="xsd:integer" minOccurs="0"/>
+				<xsd:element name="CounterDepth" type="LengthDimension" minOccurs="0"/>
+				<xsd:element name="DryerPowerSource" type="String" minOccurs="0"/>
+				<xsd:element name="DryingPerformanceRating" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="IceCapacity" type="IceCapacityDimension" minOccurs="0"/>
+				<xsd:element name="IsPortable" type="xsd:boolean" minOccurs="0"/>
+				<xsd:element name="LightingMethod" type="String" minOccurs="0"/>
+				<xsd:element name="OptionCycles" type="xsd:integer" minOccurs="0"/>
+				<xsd:element name="RecommendedProductUses" type="String" minOccurs="0"/>
+				<xsd:element name="ShelfType" type="String" minOccurs="0"/>
+				<xsd:element name="StandardCycleCapacity" type="CapacityDimension" minOccurs="0"/>
+				<xsd:element name="StandardCycles" type="xsd:integer" minOccurs="0"/>
+				<xsd:element name="TrayType" type="String" minOccurs="0"/>
+				<xsd:element name="WasherArms" type="xsd:integer" minOccurs="0"/>
+				<xsd:element name="WashingPerformanceRating" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="WaterConsumption" type="WaterConsumptionDimension" minOccurs="0"
+				/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<!--
+    ###############################################################
+    # LAUNDRY_APPLIANCE Classification Data
+    ###############################################################
+    -->
+	<xsd:element name="LaundryAppliance">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="AccessLocation" type="String" minOccurs="0"/>
+				<xsd:element name="AnnualEnergyConsumption" type="EnergyConsumptionDimension"
+					minOccurs="0"/>
+				<xsd:element name="AnnualEnergyConsumptionCycle" type="EnergyConsumptionDimension"
+					minOccurs="0"/>
+				<xsd:element name="AnnualEnergyConsumptionWashing" type="EnergyConsumptionDimension"
+					minOccurs="0"/>
+				<xsd:element name="AnnualWaterConsumption" type="WaterConsumptionDimension"
+					minOccurs="0"/>
+				<xsd:element name="AnnualWaterConsumptionCycle" type="WaterConsumptionDimension"
+					minOccurs="0"/>
+				<xsd:element name="AnnualWaterConsumptionWashing" type="WaterConsumptionDimension"
+					minOccurs="0"/>
+				<xsd:element name="ClothesCapacity" type="String" minOccurs="0"/>
+				<xsd:element name="CompatibleDevice" type="String" minOccurs="0"/>
+				<xsd:element name="ConnectorType" type="String" minOccurs="0" maxOccurs="2"/>
+				<xsd:element name="ControlsType" type="String" minOccurs="0"/>
+				<xsd:element name="CoolingVents" type="xsd:integer" minOccurs="0"/>
+				<xsd:element name="CounterDepth" type="LengthDimension" minOccurs="0"/>
+				<xsd:element name="DryerPowerSource" type="String" minOccurs="0"/>
+				<xsd:element name="DryingCapacity" type="CapacityDimension" minOccurs="0"/>
+				<xsd:element name="DryingPerformanceRating" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="DryingTechnology" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="EnergyConsumptionCycle" type="EnergyConsumptionDimension"
+					minOccurs="0"/>
+				<xsd:element name="EnergyConsumptionWashing" type="EnergyConsumptionDimension"
+					minOccurs="0"/>
+				<xsd:element name="IceCapacity" type="IceCapacityDimension" minOccurs="0"/>
+				<xsd:element name="IsPortable" type="xsd:boolean" minOccurs="0"/>
+				<xsd:element name="LightingMethod" type="String" minOccurs="0"/>
+				<xsd:element name="MaxRotationSpeed" type="RotationSpeedDimension" minOccurs="0"/>
+				<xsd:element name="NoiseLevelDraining" type="NoiseLevelDimension" minOccurs="0"/>
+				<xsd:element name="NoiseLevelDrying" type="NoiseLevelDimension" minOccurs="0"/>
+				<xsd:element name="NoiseLevelDryingCottonDryMode" type="NoiseLevelDimension"
+					minOccurs="0"/>
+				<xsd:element name="NoiseLevelDryingStandardMode" type="NoiseLevelDimension"
+					minOccurs="0"/>
+				<xsd:element name="NoiseLevelSpinning" type="NoiseLevelDimension" minOccurs="0"/>
+				<xsd:element name="NoiseLevelSpinningCottonDryMode" type="NoiseLevelDimension"
+					minOccurs="0"/>
+				<xsd:element name="NoiseLevelSpinningStandardMode" type="NoiseLevelDimension"
+					minOccurs="0"/>
+				<xsd:element name="NoiseLevelWashing" type="NoiseLevelDimension" minOccurs="0"/>
+				<xsd:element name="NoiseLevelWashingCottonDryMode" type="NoiseLevelDimension"
+					minOccurs="0"/>
+				<xsd:element name="NoiseLevelWashingStandardMode" type="NoiseLevelDimension"
+					minOccurs="0"/>
+				<xsd:element name="OptionCycles" type="xsd:integer" minOccurs="0"/>
+				<xsd:element name="RecommendedProductUses" type="String" minOccurs="0"/>
+				<xsd:element name="ResidualMoisturePercentage" type="PercentageType" minOccurs="0"/>
+				<xsd:element name="ShelfType" type="String" minOccurs="0"/>
+				<xsd:element name="SpinningPerformanceRating" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="StandardCycleCapacity" type="CapacityDimension" minOccurs="0"/>
+				<xsd:element name="StandardCycles" type="xsd:integer" minOccurs="0"/>
+				<xsd:element name="TrayType" type="String" minOccurs="0"/>
+				<xsd:element name="WasherArms" type="xsd:integer" minOccurs="0"/>
+				<xsd:element name="WashingCapacity" type="CapacityDimension" minOccurs="0"/>
+				<xsd:element name="WashingPerformanceRating" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="WaterConsumption" type="WaterConsumptionDimension" minOccurs="0"/>
+				<xsd:element name="WaterConsumptionCycle" type="WaterConsumptionDimension"
+					minOccurs="0"/>
+				<xsd:element name="WaterConsumptionWashing" type="WaterConsumptionDimension"
+					minOccurs="0"/>
+				<xsd:element name="WeightedAnnualEnergyConsumption"
+					type="EnergyConsumptionDimension" minOccurs="0"/>
+				<xsd:element name="WeightedAnnualWaterConsumption" type="WaterConsumptionDimension"
+					minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<!--
+    ###############################################################
+    # MICROWAVE_OVEN Classification Data
+    ###############################################################
+    -->
+	<xsd:element name="MicrowaveOven">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="ChamberVolume" type="WaterConsumptionDimension" minOccurs="0"/>
+				<xsd:element name="ControlsType" type="String" minOccurs="0"/>
+				<xsd:element name="EnergyConsumptionConvection" type="EnergyConsumptionDimension"
+					minOccurs="0"/>
+				<xsd:element name="EnergyConsumptionStandard" type="EnergyConsumptionDimension"
+					minOccurs="0"/>
+				<xsd:element name="FuelType" type="String" minOccurs="0"/>
+				<xsd:element name="LightingMethod" type="String" minOccurs="0"/>
+				<xsd:element name="Racks" type="xsd:integer" minOccurs="0"/>
+				<xsd:element name="RecommendedProductUses" type="String" minOccurs="0"/>
+				<xsd:element name="ShelfType" type="String" minOccurs="0"/>
+				<xsd:element name="VolumeCapacityName" type="StringNotNull" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<!--
+    ###############################################################
+    # RANGE Classification Data
+    ###############################################################
+    -->
+	<xsd:element name="Range">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="AirflowDisplacement" type="AirflowDisplacementDimension"
+					minOccurs="0"/>
+				<xsd:element name="BurnerType" type="String" minOccurs="0"/>
+				<xsd:element name="ChamberVolume" type="WaterConsumptionDimension" minOccurs="0"/>
+				<xsd:element name="ControlsType" type="String" minOccurs="0"/>
+				<xsd:element name="CooktopMaterialType" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="DrawerType" type="String" minOccurs="0" maxOccurs="4"/>
+				<xsd:element name="EnergyConsumptionConvection" type="EnergyConsumptionDimension"
+					minOccurs="0"/>
+				<xsd:element name="EnergyConsumptionStandard" type="EnergyConsumptionDimension"
+					minOccurs="0"/>
+				<xsd:element name="FuelType" type="String" minOccurs="0"/>
+				<xsd:element name="HeatingElements" type="xsd:integer" minOccurs="0"/>
+				<xsd:element name="HeatingMode" type="String" minOccurs="0"/>
+				<xsd:element name="HoodDescription" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="LightingMethod" type="String" minOccurs="0"/>
+				<xsd:element name="MaxEnergyOutput" type="MaxEnergyOutputDimension" minOccurs="0"/>
+				<xsd:element name="Racks" type="xsd:integer" minOccurs="0"/>
+				<xsd:element name="RecommendedProductUses" type="String" minOccurs="0"/>
+				<xsd:element name="ShelfType" type="String" minOccurs="0"/>
+				<xsd:element name="TopStyle" type="String" minOccurs="0"/>
+				<xsd:element name="TrayType" type="String" minOccurs="0"/>
+				<xsd:element name="VolumeCapacityName" type="StringNotNull" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<!--
+    ###############################################################
+    # REFRIGERATION_APPLIANCE Classification Data
+    ###############################################################
+    -->
+	<xsd:element name="RefrigerationAppliance">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="AdditionalProductInformation" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="AnnualEnergyConsumption" type="EnergyConsumptionDimension"
+					minOccurs="0"/>
+				<xsd:element name="BottleCount" type="xsd:integer" minOccurs="0"/>
+				<xsd:element name="CompatibleDevice" type="String" minOccurs="0"/>
+				<xsd:element name="ConnectorType" type="String" minOccurs="0" maxOccurs="2"/>
+				<xsd:element name="ControlsType" type="String" minOccurs="0"/>
+				<xsd:element name="CoolingVents" type="xsd:integer" minOccurs="0"/>
+				<xsd:element name="CounterDepth" type="LengthDimension" minOccurs="0"/>
+				<xsd:element name="DefrostSystemType" type="String" minOccurs="0"/>
+				<xsd:element name="DoorMaterialType" type="String" minOccurs="0"/>
+				<xsd:element name="DoorOrientation" minOccurs="0"/>
+				<xsd:element name="Drawers" type="xsd:integer" minOccurs="0"/>
+				<xsd:element name="DryerPowerSource" type="String" minOccurs="0"/>
+				<xsd:element name="EuEnergyLabelEfficiencyClass1992" type="StringNotNull"
+					minOccurs="0"/>
+				<xsd:element name="FilterPoreSize" type="FilterPoreSizeDimension" minOccurs="0"/>
+				<xsd:element name="FreezerCapacity" type="VolumeDimension" minOccurs="0"/>
+				<xsd:element name="FreshFoodCapacity" type="VolumeDimension" minOccurs="0"/>
+				<xsd:element name="FreezerLocation" type="VolumeDimension" minOccurs="0"/>
+				<xsd:element name="IceCapacity" type="IceCapacityDimension" minOccurs="0"/>
+				<xsd:element name="LightingMethod" type="String" minOccurs="0"/>
+				<xsd:element name="MaximumHorsepower" type="MaximumHorsepowerDimension"
+					minOccurs="0"/>
+				<xsd:element name="RecommendedProductUses" type="String" minOccurs="0"/>
+				<xsd:element name="RefrigerationClimateClassification" type="StringNotNull"
+					minOccurs="0"/>
+				<xsd:element name="ShelfType" type="String" minOccurs="0"/>
+				<xsd:element name="Shelves" type="xsd:integer" minOccurs="0"/>
+				<xsd:element name="StorageVolume" type="VolumeDimension" minOccurs="0"/>
+				<xsd:element name="TrayType" type="String" minOccurs="0"/>
+				<xsd:element name="VegetableCompartmentCapacity" type="String" minOccurs="0"/>
+				<xsd:element name="WasherArms" type="xsd:integer" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<!--
+    ###############################################################
+    # TRASH_COMPACTOR Classification Data
+    ###############################################################
+    -->
+	<xsd:element name="TrashCompactor">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="CompactRatio" type="String" minOccurs="0"/>
+				<xsd:element name="ControlsType" type="String" minOccurs="0"/>
+				<xsd:element name="LightingMethod" type="String" minOccurs="0"/>
+				<xsd:element name="RecommendedProductUses" type="String" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<!--
+    ###############################################################
+    # VENT_HOOD Classification Data
+    ###############################################################
+    -->
+	<xsd:element name="VentHood">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="AirflowDisplacement" type="AirflowDisplacementDimension"
+					minOccurs="0"/>
+				<xsd:element name="ChamberVolume" type="WaterConsumptionDimension" minOccurs="0"/>
+				<xsd:element name="ControlsType" type="String" minOccurs="0"/>
+				<xsd:element name="EnergyConsumptionConvection" type="EnergyConsumptionDimension"
+					minOccurs="0"/>
+				<xsd:element name="EnergyConsumptionStandard" type="EnergyConsumptionDimension"
+					minOccurs="0"/>
+				<xsd:element name="FuelType" type="String" minOccurs="0"/>
+				<xsd:element name="HoodDescription" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="LightingMethod" type="String" minOccurs="0"/>
+				<xsd:element name="RecommendedProductUses" type="String" minOccurs="0"/>
+				<xsd:element name="VolumeCapacityName" type="StringNotNull" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<!--
+    ###############################################################
+    ###############################################################
+    # LargeAppliances Type Definitions
+    ###############################################################
+    ###############################################################
+    -->
+	<xsd:simpleType name="EffeciencyClassTypeValues">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="a"/>
+			<xsd:enumeration value="b"/>
+			<xsd:enumeration value="c"/>
+			<xsd:enumeration value="d"/>
+			<xsd:enumeration value="e"/>
+			<xsd:enumeration value="f"/>
+			<xsd:enumeration value="g"/>
+			<xsd:enumeration value="a_plus"/>
+			<xsd:enumeration value="a_plus_plus"/>
+			<xsd:enumeration value="a_plus_plus_plus"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="CapacityDimension">
+		<xsd:simpleContent>
+			<xsd:extension base="Dimension">
+				<xsd:attribute name="unitOfMeasure" type="CapacityUnitOfMeasure" use="required"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="CapacityUnitOfMeasure">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="kg"/>
+			<xsd:enumeration value="place_settings"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="MaximumHorsepowerDimension">
+		<xsd:simpleContent>
+			<xsd:extension base="Dimension">
+				<xsd:attribute name="unitOfMeasure" type="MaximumHorsepowerUnitOfMeasure"
+					use="required"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="MaximumHorsepowerUnitOfMeasure">
+		<xsd:restriction base="String">
+			<xsd:enumeration value="horsepower"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="WaterConsumptionDimension">
+		<xsd:simpleContent>
+			<xsd:extension base="Dimension">
+				<xsd:attribute name="unitOfMeasure" type="LAWaterConsumptionUnitOfMeasure"
+					use="required"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="LAWaterConsumptionUnitOfMeasure">
+		<xsd:restriction base="String">
+			<xsd:enumeration value="liters"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="AirflowDisplacementDimension">
+		<xsd:simpleContent>
+			<xsd:extension base="Dimension">
+				<xsd:attribute name="unitOfMeasure" type="AirflowDisplacementUnitOfMeasure"
+					use="required"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="AirflowDisplacementUnitOfMeasure">
+		<xsd:restriction base="String">
+			<xsd:enumeration value="cubic_feet_per_minute"/>
+			<xsd:enumeration value="CFM"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="MaxEnergyOutputDimension">
+		<xsd:simpleContent>
+			<xsd:extension base="Dimension">
+				<xsd:attribute name="unitOfMeasure" type="MaxEnergyOutputUnitOfMeasure"
+					use="required"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="MaxEnergyOutputUnitOfMeasure">
+		<xsd:restriction base="String">
+			<xsd:enumeration value="btus"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="IceCapacityDimension">
+		<xsd:simpleContent>
+			<xsd:extension base="Dimension">
+				<xsd:attribute name="unitOfMeasure" type="IceCapacityUnitOfMeasure" use="required"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="IceCapacityUnitOfMeasure">
+		<xsd:restriction base="String">
+			<xsd:enumeration value="pounds"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="FilterPoreSizeDimension">
+		<xsd:simpleContent>
+			<xsd:extension base="Dimension">
+				<xsd:attribute name="unitOfMeasure" type="FilterPoreSizeUnitOfMeasure"
+					use="required"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="FilterPoreSizeUnitOfMeasure">
+		<xsd:restriction base="String">
+			<xsd:enumeration value="micrometer"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="RotationSpeedDimension">
+		<xsd:simpleContent>
+			<xsd:extension base="Dimension">
+				<xsd:attribute name="unitOfMeasure" type="MaxRotationSpeedUnitOfMeasure"
+					use="required"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="MaxRotationSpeedUnitOfMeasure">
+		<xsd:restriction base="String">
+			<xsd:enumeration value="rpm"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="PowerPlugCapacityDimension">
+		<xsd:simpleContent>
+			<xsd:extension base="Dimension">
+				<xsd:attribute name="unitOfMeasure" type="PowerPlugCapacityUnitOfMeasure"
+					use="required"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="PowerPlugCapacityUnitOfMeasure">
+		<xsd:restriction base="String">
+			<xsd:enumeration value="amps"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

@@ -1,0 +1,118 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<!--
+    $Date: 2012/05/09 $
+    AMAZON.COM CONFIDENTIAL.  This document and the information contained in it are
+    confidential and proprietary information of Amazon.com and may not be reproduced, 
+    distributed or used, in whole or in part, for any purpose other than as necessary 
+    to list products for sale on the www.amazon.com web site pursuant to an agreement 
+    with Amazon.com.
+    -->
+	<xsd:include schemaLocation="amzn-base.xsd"/>
+	<!--
+    Please read the corresponding documentation that contains the recommended values for elements
+    of type StringNotNull.
+    -->
+	<xsd:element name="Luggage">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="ProductType">
+					<xsd:simpleType>
+						<xsd:restriction base="HundredString">
+							<xsd:enumeration value="Luggage"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+				<xsd:element name="VariationData" minOccurs="0">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="Parentage">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:enumeration value="parent"/>
+										<xsd:enumeration value="child"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+							<xsd:element name="VariationTheme" minOccurs="0">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:enumeration value="SizeName"/>
+										<xsd:enumeration value="ColorName"/>
+										<xsd:enumeration value="SizeName-ColorName"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element ref="Battery" minOccurs="0"/>
+				<xsd:element name="Model" type="FortyStringNotNull" minOccurs="0"/>
+				<xsd:element name="ModelName" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="VolumeCapacityName" type="VolumeDimension" minOccurs="0"/>
+				<xsd:element name="SpecialFeatures" type="StringNotNull" minOccurs="0" maxOccurs="13"/>
+				<xsd:element name="MaterialType" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="ClosureType" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="ShellType" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="TeamName" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="InnerMaterialType" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="Collection" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="IsStainResistant" type="xsd:boolean" minOccurs="0"/>
+				<xsd:element name="StrapType" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="NumberOfWheels" type="xsd:positiveInteger" minOccurs="0"/>
+				<xsd:element name="LithiumBatteryWeight" type="WeightDimension" minOccurs="0"/>
+				<xsd:element name="WheelType" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="ColorMap" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="Lifestyle" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="ShoulderStrapDrop" type="LengthDimension" minOccurs="0"/>
+				<xsd:element name="Size" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="Certification" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="Season" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="Department" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="OuterMaterialType" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="BatteryComposition" type="BatteryCellTypeValues" minOccurs="0"/>
+				<xsd:element name="LoadConfiguration" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="LeatherType" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="ModelYear" type="FourDigitYear" minOccurs="0"/>
+				<xsd:element name="Style" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="FabricType" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="Color" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="LiningDescription" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="BatteryDescription" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="Specifications" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="BatteryFormFactor" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="Pattern" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="MinimumCircumference" type="LengthDimension" minOccurs="0"/>
+				<xsd:element name="MaximumCircumference" type="LengthDimension" minOccurs="0"/>
+				<xsd:element name="LockType" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="Character" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="Warranty" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="NumberOfCompartments" type="PositiveInteger" minOccurs="0"/>
+				<xsd:element name="OccasionType" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="CompartmentDescription" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="DisplaySize" type="LengthDimension" minOccurs="0"/>
+				<xsd:element name="HandleType" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="HarmonizedCode" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="VeryHighValue" type="xsd:boolean" minOccurs="0"/>
+				<xsd:element name="ManufacturerMinimumAge" type="AgeRecommendedDimension" minOccurs="0"/>
+				<xsd:element name="WaterResistance" type="WaterResistantType" minOccurs="0"/>
+				<xsd:element name="WearResistance" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="WarrantyType" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="SizeMap" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="CareInstructions" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="IncludedComponents" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="IsAdultProduct" type="xsd:boolean" minOccurs="0"/>
+				<xsd:element name="PerformanceRating" type="StringNotNull" minOccurs="0" maxOccurs="3"/>
+				<xsd:element name="SellerWarrantyDescription" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="PatternType" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="Theme" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="SpecificUsesForProduct" type="StringNotNull" minOccurs="0" maxOccurs="3"/>
+				<xsd:element name="Opacity" type="HundredString" minOccurs="0"/>
+				<xsd:element name="MfrWarrantyDescriptionType" type="StringNotNull"	minOccurs="0"/>
+				<xsd:element name="MfrWarrantyDescriptionParts" type="SuperLongStringNotNull" minOccurs="0"/>
+				<xsd:element name="MfrWarrantyDescriptionLabor" type="SuperLongStringNotNull" minOccurs="0"/>
+				<xsd:element name="FabricWash" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="CapacityName" type="StringNotNull" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

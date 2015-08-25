@@ -1,0 +1,226 @@
+<?xml version="1.0"?>
+<!-- Revision="$Revision: #1 $" -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<!--
+    $Date: 2011/04/06 $
+
+    AMAZON.COM CONFIDENTIAL.  This document and the information contained in it are
+    confidential and proprietary information of Amazon.com and may not be reproduced, 
+    distributed or used, in whole or in part, for any purpose other than as necessary 
+    to list products for sale on the www.amazon.com web site pursuant to an agreement 
+    with Amazon.com. 
+    -->
+	<xsd:include schemaLocation="amzn-base.xsd"/>
+	<xsd:element name="Baby">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="ProductType">
+					<xsd:complexType>
+						<xsd:choice>
+							<xsd:element ref="BabyProducts"/>
+						</xsd:choice>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="BabyProducts">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="AlertType" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="AssemblyInstructions" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="AssemblyTime" type="AssemblyTimeDimension" minOccurs="0"/>
+				<xsd:element name="AwardsWon" type="HundredString" minOccurs="0"/>
+				<xsd:element name="BaseType" type="HundredString" minOccurs="0"/>
+				<xsd:element name="BaseWidth" type="LengthDimension" minOccurs="0"/>
+				<xsd:element ref="Battery" minOccurs="0"/>
+				<xsd:element name="BatteryAverageLife" type="BatteryLifeDimension" minOccurs="0"/>
+				<xsd:element name="BatteryAverageLifeStandby" type="BatteryLifeDimension" minOccurs="0"/>
+				<xsd:element name="BatteryAverageLifeTalkTime" type="TimeDimension"	minOccurs="0"/>
+				<xsd:element name="BatteryCapacity" type="BatteryPowerDimension" minOccurs="0"/>
+				<xsd:element name="BatteryCellComposition" type="BatteryCellTypeValues" minOccurs="0"/>
+				<xsd:element name="BatteryChargeTime" type="TimeDimension" minOccurs="0"/>
+				<xsd:element name="BatteryDescription" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="BatteryPower" type="BatteryPowerIntegerDimension" minOccurs="0"/>
+				<xsd:element name="BottleNippleType" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="BottleType" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="CareInstructions" type="StringNotNull" minOccurs="0"
+					maxOccurs="3"/>
+				<xsd:element name="CarrierWeight" type="WeightDimension" minOccurs="0"/>
+				<xsd:element name="CarSeatWeightGroupEU" type="CarSeatWeightGroupEUType" minOccurs="0" maxOccurs="3"/>
+				<xsd:element name="ChestSize" type="ClothingSizeDimension" minOccurs="0"/>
+				<xsd:element name="ColorMap" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="ColorName" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="CommunicationInterface" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="CompatibleDevices" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="ControlType" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="CountryOfOrigin" type="CountryOfOriginType" minOccurs="0"/>
+				<xsd:element name="CupSize" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="Directions" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="DisplaySize" type="LengthDimension" minOccurs="0"/>
+				<xsd:element name="DisplayType" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="EducationalValue" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="FillMaterialType" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="FoldedSize" type="StringNotNull" minOccurs="0"/>
+				<xsd:element ref="ForwardFacingWeight" minOccurs="0"/>
+				<xsd:element name="FrequencyBandsSupported" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="FrequencyResponse" type="FrequencyDimension" minOccurs="0"/>
+				<xsd:element name="FurnitureFinish" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="HandleHeight" type="LengthDimension" minOccurs="0"/>
+				<xsd:element name="HardwareVisibility" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="HarnessType" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="IncludesAcAdapter" type="xsd:boolean" minOccurs="0"/>
+				<xsd:element name="IncludesRemote" type="xsd:boolean" minOccurs="0"/>
+				<xsd:element name="Ingredients" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="IsAssemblyRequired" type="xsd:boolean" minOccurs="0"/>
+				<xsd:element name="IsDishwasherSafe" type="xsd:boolean" minOccurs="0"/>
+				<xsd:element name="IsPortable" type="xsd:boolean" minOccurs="0"/>
+				<xsd:element name="ItemDepth" type="LengthDimension" minOccurs="0"/>
+				<xsd:element name="ItemDiameter" type="LengthDimension" minOccurs="0"/>
+				<xsd:element name="DisplayVolume" type="VolumeDimension" minOccurs="0"/>
+				<xsd:element name="DisplayWeight" type="WeightDimension" minOccurs="0"/>
+				<xsd:element name="DisplayLength" type="LengthDimension" minOccurs="0"/>
+				<xsd:element name="Language" type="LanguageStringType" minOccurs="0"/>
+				<xsd:element name="Lifestyle" type="LongString" minOccurs="0" maxOccurs="2"/>
+				<xsd:element name="LithiumBatteryEnergyContent" type="EnergyConsumptionDimension" minOccurs="0"/>
+				<xsd:element name="LithiumBatteryPackaging" minOccurs="0">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:enumeration value="batteries_contained_in_equipment"/>
+							<xsd:enumeration value="batteries_only"/>
+							<xsd:enumeration value="batteries_packed_with_equipment"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+				<xsd:element name="ManufacturerWarrantyDescription" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="MaterialComposition" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="MaterialType" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="MaterialTypeFree" type="StringNotNull" minOccurs="0"
+					maxOccurs="3"/>
+				<xsd:element name="MaximumAnchoringWeightCapacity" type="WeightDimension"
+					minOccurs="0"/>
+				<xsd:element name="MaximumHeightRecommendation" type="LengthDimension" minOccurs="0"/>
+				<xsd:element name="MaximumManufacturerAgeRecommended" type="OptionalAgeRecommendedDimension" minOccurs="0"/>
+				<xsd:element name="MaximumItemWidth" type="LengthDimension" minOccurs="0"/>
+				<xsd:element name="MaximumRangeIndoors" type="LengthDimension" minOccurs="0"/>
+				<xsd:element name="MaximumRangeOpenSpace" type="LengthDimension" minOccurs="0"/>
+				<xsd:element name="MaximumWeightRecommendation" type="PositiveWeightDimension"
+					minOccurs="0"/>
+				<xsd:element name="MfgWarrantyDescriptionLabor" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="MfgWarrantyDescriptionParts" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="MfgWarrantyDescriptionType" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="MinimumHeightRecommendation" type="LengthDimension" minOccurs="0"/>
+				<xsd:element name="MinimumManufacturerAgeRecommended" type="OptionalAgeRecommendedDimension" minOccurs="0"/>
+				<xsd:element name="MinimumWeightRecommendation" type="PositiveWeightDimension"
+					minOccurs="0"/>
+				<xsd:element name="NumberOfChannels" type="xsd:positiveInteger" minOccurs="0"/>
+				<xsd:element name="NumberOfControlChannels" type="xsd:positiveInteger" minOccurs="0"/>
+				<xsd:element name="NumberOfFrequencyChannels" type="xsd:positiveInteger" minOccurs="0"/>
+				<xsd:element name="NumberOfHeightPositions" type="xsd:positiveInteger" minOccurs="0"/>
+				<xsd:element name="NumberOfLithiumIonCells" type="xsd:positiveInteger" minOccurs="0"/>
+				<xsd:element name="NumberOfLithiumMetalCells" type="xsd:positiveInteger" minOccurs="0"/>
+				<xsd:element name="NumberOfPieces" type="xsd:positiveInteger" minOccurs="0"/>
+				<xsd:element name="NumberOfPlayers" type="xsd:positiveInteger" minOccurs="0"/>
+				<xsd:element name="NumberOfPositions" type="xsd:positiveInteger" minOccurs="0"/>
+				<xsd:element name="OperationMode" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="Orientation" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="VariationData" minOccurs="0">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="Parentage">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:enumeration value="parent"/>
+										<xsd:enumeration value="child"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+							<xsd:element name="VariationTheme" minOccurs="0">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:enumeration value="Size"/>
+										<xsd:enumeration value="Color"/>
+										<xsd:enumeration value="Size-Color"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="PortableDisplaySize" type="LengthDimension" minOccurs="0"/>
+				<xsd:element name="PowerSourceType" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="RailGauge" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="RailType" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="RearFacingMaximumWeight" type="WeightDimension" minOccurs="0"/>
+				<xsd:element name="RearFacingMinimumWeight" type="WeightDimension" minOccurs="0"/>
+				<xsd:element name="RecommendedUsesForProduct" type="StringNotNull" minOccurs="0"
+					maxOccurs="3"/>
+				<xsd:element name="RegionOfOrigin" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="RemoteControlTechnology" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="SafetyWarning" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="ScaleName" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="SeatBackInteriorHeight" type="LengthDimension" minOccurs="0"/>
+				<xsd:element name="SeatHeight" type="LengthDimension" minOccurs="0"/>
+				<xsd:element name="SeatInteriorWidth" type="LengthDimension" minOccurs="0"/>
+				<xsd:element name="SeatLength" type="LengthDimension" minOccurs="0"/>
+				<xsd:element name="SeatWidth" type="LengthDimension" minOccurs="0"/>
+				<xsd:element name="SeatingCapacity" type="xsd:positiveInteger" minOccurs="0"/>
+				<xsd:element name="SellerWarrantyDescription" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="SensorTechnology" type="StringNotNull" minOccurs="0"
+					maxOccurs="5"/>
+				<xsd:element name="ShoulderHarnessMaximumHeight" type="LengthDimension"
+					minOccurs="0"/>
+				<xsd:element name="ShoulderHarnessMinimumHeight" type="LengthDimension"
+					minOccurs="0"/>
+				<xsd:element name="SizeMap" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="SizeName" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="SpecialFeatures" type="StringNotNull" minOccurs="0" maxOccurs="5"/>
+				<xsd:element name="SpecificUsesForProduct" type="StringNotNull" minOccurs="0"
+					maxOccurs="5"/>
+				<xsd:element name="SpecificationMet" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="StyleName" type="StringNotNull" minOccurs="0" maxOccurs="5"/>
+				<xsd:element name="SubjectCharacter" type="StringNotNull" minOccurs="0"
+					maxOccurs="5"/>
+				<xsd:element name="SuspensionType" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="TargetGender" type="TargetGenderType" minOccurs="0"/>
+				<xsd:element name="TireDiameter" type="LengthDimension" minOccurs="0"/>
+				<xsd:element name="TireMaterial" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="TotalTravel" type="LengthDimension" minOccurs="0"/>
+				<xsd:element name="TrayType" type="StringNotNull" minOccurs="0" maxOccurs="2"/>
+				<xsd:element name="UnitCount" minOccurs="0">
+					<xsd:complexType>
+						<xsd:simpleContent>
+							<xsd:extension base="xsd:positiveInteger">
+								<xsd:attribute name="unitOfMeasure" type="StringNotNull"
+									use="required"/>
+							</xsd:extension>
+						</xsd:simpleContent>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="WarrantyDescription" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="WheelType" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="WirelessCommunicationTechnology" type="StringNotNull"
+					minOccurs="0"/>
+				<xsd:element name="UnknownSubject" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="EngineType" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="BatteryTypeLithiumIon" type="PositiveInteger" minOccurs="0"/>
+				<xsd:element name="BatteryTypeLithiumMetal" type="PositiveInteger" minOccurs="0"/>
+				<xsd:element name="LithiumBatteryVoltage" type="PositiveInteger" minOccurs="0"/>
+				<xsd:element name="LithiumBatteryWeight" type="PositiveInteger" minOccurs="0"/>
+				<xsd:element name="DistributionDesignation" type="DistributionDesignationValues" minOccurs="0"/>
+				<xsd:element name="CountryString" type="LongStringNotNull" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:complexType name="OptionalAgeRecommendedDimension">
+		<xsd:simpleContent>
+			<xsd:extension base="PositiveInteger">
+				<xsd:attribute name="unitOfMeasure" type="AgeRecommendedUnitOfMeasure" use="optional"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	
+</xsd:schema>

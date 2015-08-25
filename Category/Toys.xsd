@@ -197,6 +197,8 @@
 				<xsd:element name="BatteryTypeLithiumIon" type="PositiveInteger" minOccurs="0"/>
 				<xsd:element name="BatteryTypeLithiumMetal" type="PositiveInteger" minOccurs="0"/>
 				<xsd:element name="SpecificationMet" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="DistributionDesignation" type="DistributionDesignationValues" minOccurs="0"/>
+				<xsd:element name="CountryString" type="LongStringNotNull" minOccurs="0"/>
 			</xsd:sequence>
 		</xsd:complexType>
 	</xsd:element>
@@ -262,6 +264,8 @@
 				<xsd:element name="ToyAwardName" type="ToyAwardType" minOccurs="0" maxOccurs="5"/>
 				<xsd:element name="WheelDiameter" type="LengthDimension" minOccurs="0"/>
 				<xsd:element name="WheelType" type="StringNotNull" minOccurs="0"/>
+				<xsd:element name="DistributionDesignation" type="DistributionDesignationValues" minOccurs="0"/>
+				<xsd:element name="CountryString" type="LongStringNotNull" minOccurs="0"/>
 			</xsd:sequence>
 		</xsd:complexType>
 	</xsd:element>
